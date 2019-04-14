@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'www/base.html' %}
+{% load static %}
+{% block title %}
+    loopback Public FTP
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h2>Git</h2>
+            <p><a href="https://nvie.com/posts/a-successful-git-branching-model/">a-successful-git-branching-model</a></p>
+            <p><a href="https://www.popit.kr/%EA%B0%9C%EB%B0%9C%EB%B0%94%EB%B3%B4%EB%93%A4-git-back-to-the-future/">개발바보들 - 과거로 돌아가는 법</a></p>
+            <p><a href="http://www.devpools.kr/2017/02/05/%EC%B4%88%EB%B3%B4%EC%9A%A9-git-%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0-reset-revert/">[초보용] Git 되돌리기( Reset, Revert)</a></p>
+            <p><a href="http://www.devpools.kr/2017/02/27/%EA%B0%9C%EB%B0%9C%EB%B0%94%EB%B3%B4%EB%93%A4-2%ED%99%94-git-stash/">개발바보들 2화 – git “Stash”</a></p>
+            <h2>Markdown</h2>
+            <p><a href="https://heropy.blog/2017/09/30/markdown/">MarkDown 사용법 총정리</a></p>
+            <p><a href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf">Markdown Cheat-sheet</a></p>
+            <p><a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md">emoji</a></p>
+            <h2>Bootstrap</h2>
+            <p><a href="https://www.bootstrapdash.com/">BootstrapDash</a></p>
+            <p><a href="https://bootstrapmade.com/">BootstrapMade</a></p>
 
-</body>
-</html>
+            <p><a href="https://github.com/cr3ux53c/hello-github">fdsafdsafdsafsda</a></p>
+        </div>
+    </div>
+{% endblock content %}
