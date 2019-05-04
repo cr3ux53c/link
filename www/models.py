@@ -12,4 +12,8 @@ class Link(models.Model):
     text = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.text
+        tail = ''
+        if len(self.href) > 50:
+            tail = '...'
+        return self.text + ' :: ' + self.href[:50] + tail
+
