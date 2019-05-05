@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 # Create your views here.
 from django.views import View
@@ -16,5 +16,6 @@ class LinkListView(ListView):
 
 
 class Redirect(View):
-    def get(self, request):
-        pass
+    def get(self, request, path):
+        link = Link.objects.get(path=path)
+        return HttpResponseRedirect(link.href)

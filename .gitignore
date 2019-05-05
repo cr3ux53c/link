@@ -2,3 +2,4 @@ venv/
 .idea/
 link/settings.py
 db.sqlite3
+www/migrations/
