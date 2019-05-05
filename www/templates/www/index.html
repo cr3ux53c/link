@@ -203,7 +203,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header d-flex align-items-center">
-                                <h3 class="h4">Striped table with hover effect</h3>
+                                <h3 class="h4">하이라이트</h3>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -222,12 +222,17 @@
                                                 <th scope="row">{{ link.id }}</th>
                                                 <td>{{ link.name }}</td>
                                                 {% if link.path %}
-                                                    <td><a href="/{{ link.path }}">/{{ link.path }}</a></td>
+                                                    <td><a href="/{{ link.path }}">link.loopback.kr/<strong>{{ link.path }}</strong></a></td>
                                                 {% else %}
                                                     <td>없음</td>
                                                 {% endif %}
-
-                                                <td>{{ link.href }}</td>
+                                                {% if link.href|slice:"0:7" == 'http://' %}
+                                                    <td><i aria-hidden="true" class="fa fa-times text-danger mr-2"></i><strong style="color:#dc3545">Not secure </strong> {{ link.href }}</td>
+                                                {% elif  link.href|slice:"0:8" == 'https://' %}
+                                                    <td><i aria-hidden="true" class="fa fa-check text-success mr-2"></i><strong style="color:#28a745">Secure </strong> {{ link.href }}</td>
+                                                {% else %}
+                                                    <td>{{ link.href }}</td>
+                                                {% endif %}
                                             </tr>
                                         {% endfor %}
                                         </tbody>
