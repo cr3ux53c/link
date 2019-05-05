@@ -20,5 +20,6 @@ class Link(models.Model):
         verbose_name_plural = '링크'
 
     href = models.URLField(verbose_name='링크')
+    path = models.CharField(verbose_name='단축 경로', max_length=50, unique=True)
     name = models.CharField(verbose_name='이름', max_length=200, blank=True, null=True)
-    path = models.CharField(verbose_name='단축 경로', max_length=50, unique=True, blank=True, null=True)
+    protocol = models.CharField(verbose_name='프로토콜', max_length=20)
