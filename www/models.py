@@ -3,6 +3,17 @@ from django.db import models
 
 # Create your models here.
 
+class Metadata(models.Model):
+    class Meta:
+        verbose_name = '단축 링크 접두 URL'
+        verbose_name_plural = '단축 링크 접두 URL'
+
+    prefix = models.URLField(verbose_name='단축 링크 접두 URL', unique=True)
+
+    def __str__(self):
+        return self.prefix
+
+
 class Link(models.Model):
     class Meta:
         verbose_name = '링크'
