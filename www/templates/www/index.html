@@ -18,14 +18,12 @@
             <div class="container-fluid">
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
                     <!-- Navbar Header-->
-                    <a href="/" class="navbar-brand d-none d-inline-block">
-                        <div class="brand-text d-none d-lg-inline-block">
-                            <span>loopback</span><strong> LINK</strong> alpha
-                        </div>
-                        <div class="brand-text d-none d-inline-block d-lg-none">loopback<strong> LINK</strong></div>
+                    <div class="navbar-header">
+                        <!-- Navbar Brand --><a href="/" class="navbar-brand d-none d-sm-inline-block">
+                        <div class="brand-text d-none d-lg-inline-block"><span>loopback</span><strong> LINK</strong></div>
+                        <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div>
                     </a>
-                        <!-- Toggle Button-->
-                        <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+                        <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
                     </div>
                     <!-- Navbar Menu -->
                     <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
@@ -159,13 +157,13 @@
                                                 <td><a href="/{{ link.path }}">link.loopback.kr/<strong>{{ link.path }}</strong></a></td>
 
                                                 {% if link.href|slice:"0:7" == 'http://' %}
-                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-times text-danger mr-2"></i><strong style="color:#dc3545">Not
+                                                    <td>{{ link.href|slice:"0:50" }}&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-times text-danger mr-2"></i><strong style="color:#dc3545">Not
                                                         secure</strong></td>
                                                 {% elif  link.href|slice:"0:8" == 'https://' %}
-                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-check text-success mr-2"></i><strong
+                                                    <td>{{ link.href|slice:"0:50" }}&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-check text-success mr-2"></i><strong
                                                             style="color:#28a745">Secure</strong></td>
                                                 {% else %}
-                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a></td>
+                                                    <td>{{ link.href|slice:"0:50" }}</td>
                                                 {% endif %}
                                             </tr>
                                         {% endfor %}
