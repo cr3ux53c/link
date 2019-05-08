@@ -227,13 +227,13 @@
                                                 <td><a href="/{{ link.path }}">link.loopback.kr/<strong>{{ link.path }}</strong></a></td>
 
                                                 {% if link.href|slice:"0:7" == 'http://' %}
-                                                    <td>{{ link.href|slice:"0:50" }}&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-times text-danger mr-2"></i><strong style="color:#dc3545">Not
+                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-times text-danger mr-2"></i><strong style="color:#dc3545">Not
                                                         secure</strong></td>
                                                 {% elif  link.href|slice:"0:8" == 'https://' %}
-                                                    <td>{{ link.href|slice:"0:50" }}&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-check text-success mr-2"></i><strong
+                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-check text-success mr-2"></i><strong
                                                             style="color:#28a745">Secure</strong></td>
                                                 {% else %}
-                                                    <td>{{ link.href|slice:"0:50" }}</td>
+                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a></td>
                                                 {% endif %}
                                             </tr>
                                         {% endfor %}
