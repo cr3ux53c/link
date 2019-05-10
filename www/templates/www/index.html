@@ -128,47 +128,18 @@
         <!-- Sidebar Navidation Menus--><span class="heading">MENU</span>
         <ul class="list-unstyled">
             <li class="active"><a href="/"> <i class="icon-home"></i>일반 </a></li>
-            {#            <li class=""><a href="#tablesDropdown" aria-expanded="true" data-toggle="collapse"> <i class="icon-grid"></i>Tables </a>#}
-            {#                <ul id="tablesDropdown" class="collapse list-unstyled show">#}
-            {#                    <li class="active"><a href="tables.html">Bootstrap tables</a></li>#}
-            {#                    <li><a href="tables-datatable.html">Datatable</a></li>#}
-            {#                </ul>#}
-            {#            </li>#}
-            {#            <li><a href="#chartsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Charts </a>#}
-            {#                <ul id="chartsDropdown" class="collapse list-unstyled ">#}
-            {#                    <li><a href="charts.html">Charts</a></li>#}
-            {#                    <li><a href="charts-gauge-sparkline.html">Gauge + Sparkline</a></li>#}
-            {#                </ul>#}
-            {#            </li>#}
-            {#            <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>#}
-            {#                <ul id="formsDropdown" class="collapse list-unstyled ">#}
-            {#                    <li><a href="forms.html">Basic forms</a></li>#}
-            {#                    <li><a href="forms-advanced.html">Advanced forms</a></li>#}
-            {#                    <li><a href="forms-autocomplete.html">Autocomplete</a></li>#}
-            {#                    <li><a href="forms-dropzone.html">Files upload</a></li>#}
-            {#                    <li><a href="forms-texteditor.html">Text editor</a></li>#}
-            {#                    <li><a href="forms-validation.html">Validation</a></li>#}
-            {#                </ul>#}
-            {#            </li>#}
-            {#            <li><a href="#componentsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-page"></i>Components </a>#}
-            {#                <ul id="componentsDropdown" class="collapse list-unstyled ">#}
-            {#                    <li><a href="components-cards.html">Cards</a></li>#}
-            {#                    <li><a href="components-calendar.html">Calendar</a></li>#}
-            {#                    <li><a href="components-gallery.html">Gallery</a></li>#}
-            {#                    <li><a href="components-loading-buttons.html">Loading buttons</a></li>#}
-            {#                    <li><a href="components-map.html">Maps</a></li>#}
-            {#                    <li><a href="components-notifications.html">Notifications</a></li>#}
-            {#                    <li><a href="components-preloader.html">Preloaders</a></li>#}
-            {#                </ul>#}
-            {#            </li>#}
-            {#            <li><a href="#pagesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Pages </a>#}
-            {#                <ul id="pagesDropdown" class="collapse list-unstyled ">#}
-            {#                    <li><a href="pages-contacts.html">Contacts</a></li>#}
-            {#                    <li><a href="login.html">Login page</a></li>#}
-            {#                    <li><a href="pages-profile.html">Profile</a></li>#}
-            {#                    <li><a href="pages-pricing.html">Pricing table</a></li>#}
-            {#                </ul>#}
-            {#            </li>#}
+            <li><a href="#techDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Technology </a>
+                <ul id="techDropdown" class="collapse list-unstyled ">
+                    <li><a href="charts.html">.NET</a></li>
+                    <li><a href="charts-gauge-sparkline.html">Android</a></li>
+                </ul>
+            </li>
+            <li><a href="#toolsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Tools </a>
+                <ul id="toolsDropdown" class="collapse list-unstyled ">
+                    <li><a href="charts.html">3DMax</a></li>
+                    <li><a href="charts-gauge-sparkline.html">Acrobat</a></li>
+                </ul>
+            </li>
         </ul>
         {#        <span class="heading">Extras</span>#}
         {#        <ul class="list-unstyled">#}
@@ -227,10 +198,13 @@
                                                 <td><a href="/{{ link.path }}">link.loopback.kr/<strong>{{ link.path }}</strong></a></td>
 
                                                 {% if link.href|slice:"0:7" == 'http://' %}
-                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-times text-danger mr-2"></i><strong style="color:#dc3545">Not
+                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true"
+                                                                                                                                                                               class="fa fa-times text-danger mr-2"></i><strong
+                                                            style="color:#dc3545">Not
                                                         secure</strong></td>
                                                 {% elif  link.href|slice:"0:8" == 'https://' %}
-                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true" class="fa fa-check text-success mr-2"></i><strong
+                                                    <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a>&nbsp;&nbsp;<i aria-hidden="true"
+                                                                                                                                                                               class="fa fa-check text-success mr-2"></i><strong
                                                             style="color:#28a745">Secure</strong></td>
                                                 {% else %}
                                                     <td><a href="{{ link.href }}">{{ link.href|slice:"0:50" }}{% if link.href|length > 50 %}.....{% endif %}</a></td>
